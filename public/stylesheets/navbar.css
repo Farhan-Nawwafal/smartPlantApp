@@ -1,0 +1,32 @@
+/* =========PENGATURAN NAVBAR START========= */
+#navbarContainer {
+    background-color: #adafad5b;
+    margin: 0 !important;
+}
+
+#plant-guard {
+    margin: auto 0;
+}
+
+#navbarNav ul {
+    background-color: #d9dbd9;
+    border-radius: 50px;
+}
+
+#navbarNav ul li {
+    margin: 0 35px;
+}
+
+#navbarNav ul li a {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+#dashboard a img {
+    margin-bottom: .3em;
+}
+
+#navbarNav a img {
+    margin-bottom: .3em;
+}
+/* =========PENGATURAN NAVBAR START========= */

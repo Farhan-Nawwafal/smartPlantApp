@@ -1,0 +1,54 @@
+body {
+    background-image: url('../images/bghome.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+    
+.container { 
+    margin-top: 13em;
+}
+
+#project-title {
+    color: white;
+}
+
+#scroll-btn {
+    background-color: #A0AF41;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+#scroll-btn:hover{
+    background-color: #8a9637;
+    transform: scale(1.1);
+}
+
+#bottom-page {
+    margin-top: 150vh;
+    margin-bottom: 20em;
+}
+
+#bottom-page .container {
+    margin-left: 15em;
+}
+
+#mokup {
+    width: 40rem;
+}
+
+#title {
+    color: white;
+    margin-top: 5em;
+}
+
+/* =========PENGATURAN RESPONSIVE DESAIN========= */
+/* Untuk PC */
+@media (min-width: 1400px) {
+    #metrik-text {
+        width: 40% !important;
+    }
+}

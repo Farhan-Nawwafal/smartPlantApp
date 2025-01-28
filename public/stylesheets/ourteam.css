@@ -1,0 +1,21 @@
+body {
+
+    font-family: Arial, sans-serif;
+}
+
+.team-section {
+    background: url('../images/Daun5.jpg') no-repeat center center/cover;
+    min-height: 100vh;
+    padding: 100px 15px;
+}
+
+.card-img-top {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.card {
+    border-radius: 15px;
+}
