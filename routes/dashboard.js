@@ -1,13 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const getDataController = require('../controllers/getsDataController');
 
-router.get('/', (req, res, next) => {
-    res.render('dashboard', {
-        css: 'dashboard', // untuk pengaturan css
-        html: 'dashboard',
-        title: 'Halaman Dashboard',
-        layout: 'layouts/main', 
-    });
-});
+router.get('/', getDataController.getAllDatas);
 
 module.exports = router;

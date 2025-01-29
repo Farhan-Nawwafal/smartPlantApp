@@ -1,23 +1,16 @@
 <!-- TITLE START -->
 <div class="container" id="title">
   <h2 class="text-center">SMART PLANT MONITORING SYSTEM</h2>
-  <p class="text-center">
-    Take care of a tree today, save a life for tomorrow
-  </p>
+  <p class="text-center">Take care of a tree today, save a life for tomorrow</p>
 </div>
 <!-- TITLE START -->
 
 <!-- CONTENT START -->
 <div class="container-fluid" id="content">
   <div class="d-flex justify-content-end header-title-content">
-    <p>
+    <p id="date">
       <span id="dateContent"></span>
-      <img
-        src="./icons/calendar_month.png"
-        alt=""
-        width="25"
-        height="25"
-      />
+      <img src="./icons/calendar_month.png" alt="" width="25" height="25" />
     </p>
   </div>
   <div class="d-flex justify-content-evenly" id="main-metrik">
@@ -27,8 +20,15 @@
           <img src="./icons/suhu_udara.png" alt="" />
         </div>
         <div class="card-body">
-          <p class="card-text text-center fs-6" id="valueSuhuUdara"></p>
-          <p class="card-text text-center fs-6">Suhu Udara</p>
+          <div class="value-text">
+            <p class="card-text text-center fs-6">
+              <% datas.forEach(property => { %> 
+                <% if (property.parameter_suhu === 'suhu_udara') { %> 
+                  Suhu Udara : <br /> <%= property.suhu_terbaru; %>°C 
+                <% } %> 
+              <% }) %>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -37,8 +37,15 @@
           <img src="./icons/kelembapan_tanah.png" alt="" />
         </div>
         <div class="card-body">
-          <p class="card-text text-center fs-6" id="valueKelembapan"></p>
-          <p class="card-text text-center fs-6">Kelembapan Tanah</p>
+          <div class="value-text">
+            <p class="text-center fs-6">
+              <% datas.forEach(property => { %> 
+                <% if (property.parameter_kelembapan === 'kelembapan_tanah') { %>
+                  Kelembapan Tanah : <br /> <%= property.kelembapan_terbaru; %> 
+                <% } %> 
+              <% }) %>
+            </p>
+          </div>
         </div>
       </div>
 
@@ -47,8 +54,13 @@
           <img src="./icons/total_penyiraman.png" alt="" />
         </div>
         <div class="card-body">
-          <p class="card-text text-center fs-6" id="valuePenyiraman"></p>
-          <p class="card-text text-center fs-6">Total Penyiraman</p>
+          <div class="value-text">
+            <p class="text-center fs-6">
+              <% datas.forEach(property => { %> 
+                Total Penyiraman Air : <br> <%= property.jumlah_penyiraman; %> kali 
+              <% }) %>
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -96,7 +108,7 @@
         </div>
       </div>
       <div class="card-body">
-        <h3 class="text-center" id="titleChart"></h3>
+        <h3 class="text-center" id="titleChart">Charts</h3>
         <canvas id="canvas-chart"></canvas>
       </div>
     </div>

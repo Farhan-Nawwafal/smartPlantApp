@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-import '../models/dotenv.js';
+require('dotenv').config();
 const con = mysql.createConnection({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',

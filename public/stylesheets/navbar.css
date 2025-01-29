@@ -29,4 +29,15 @@
 #navbarNav a img {
     margin-bottom: .3em;
 }
+
+@keyframes pages {
+    to {
+        opacity: 1;
+    }
+}
+
+.active img {
+    opacity: 0;
+    animation: pages ease-in .7s forwards;
+}
 /* =========PENGATURAN NAVBAR START========= */

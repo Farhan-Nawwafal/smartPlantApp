@@ -4,10 +4,9 @@ const router = express.Router();
 // GET Home PAGE
 router.get('/', (req, res, next) => {
     res.render('default', {
-        css: '', // untuk pengaturan css
-        html: '',
-        title: 'Page Not Found!',
         layout: 'layouts/main',
+        title: 'Page Not Found!',
+        css: '', // untuk pengaturan css
     });
 });
 

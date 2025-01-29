@@ -56,7 +56,7 @@ async function updateChart() {
 suhuUdara.addEventListener('click', () => {
   parameter = suhuUdara.value;
   titleChart.textContent = parameter;
-  canvasChart.style.visibility = 'visible';
+  // canvasChart.style.visibility = 'visible';
 
   suhuUdara.classList.replace('btn-light', 'btn-primary');
   suhuUdara.classList.replace('text-black', 'text-light');
@@ -73,7 +73,7 @@ suhuUdara.addEventListener('click', () => {
 kelembapanTanah.addEventListener('click', () => {
   parameter = kelembapanTanah.value;
   titleChart.textContent = parameter;
-  canvasChart.style.visibility = 'visible';
+  // canvasChart.style.visibility = 'visible';
 
   suhuUdara.classList.replace('btn-primary', 'btn-light');
   suhuUdara.classList.replace('text-light', 'text-black');
@@ -90,7 +90,7 @@ kelembapanTanah.addEventListener('click', () => {
 totalPenyiraman.addEventListener('click', () => {
   parameter = totalPenyiraman.value;
   titleChart.textContent = parameter;
-  canvasChart.style.visibility = 'visible';
+  // canvasChart.style.visibility = 'visible';
 
   suhuUdara.classList.replace('btn-primary', 'btn-light');
   suhuUdara.classList.replace('text-light', 'text-black');

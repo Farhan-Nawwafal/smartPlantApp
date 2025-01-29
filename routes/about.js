@@ -41,12 +41,11 @@ const identities = [
 ]
 
 router.get('/', (req, res, next) => {
-    res.render('ourteam', {
-        css: 'ourteam', // untuk pengaturan css
-        html: 'about',
+    res.render('about', {
+        layout: 'layouts/main', 
         identities: identities,
         title: 'Halaman About',
-        layout: 'layouts/main', 
+        halaman: 'about',
     });
 });
 

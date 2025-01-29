@@ -19,6 +19,10 @@ body {
     font-size: 1.3em;
 }
 
+#date img {
+    margin-bottom: .4em;
+}
+
 #main-metrik {
     margin-top: 3em;
 }
@@ -35,10 +39,6 @@ body {
     border-radius: 20px;
 }
 
-#suhu-udara .card-body p {
-    line-height: 12em;  
-}
-
 #kelembapan-tanah {
     height: 20em;
     color: white;
@@ -46,10 +46,6 @@ body {
     background-image: url('../images/bg_kelembapan_tanah.png');
     border-radius: 20px;
     margin-bottom: 4em;
-}
-
-#kelembapan-tanah .card-body p {
-    line-height: 12em;  
 }
 
 #penyiraman-air {
@@ -60,20 +56,8 @@ body {
     border-radius: 20px;
 }
 
-#penyiraman-air .card-body p {
-    line-height: 12em;  
-}
-
-#kedalaman-air {
-    height: 20em;
-    color: white;
-    background-color: transparent;
-    background-image: url('../images/bg_kedalaman_air.png');
-    border-radius: 20px;
-}
-
-#kedalaman-air .card-body p {
-    line-height: 12em;  
+.value-text {
+    margin-top: 4.7em;
 }
 
 #grafik {
@@ -101,7 +85,6 @@ body {
 #canvas-chart {
     width: 100%;
     background-color: #FFFFFF;
-    visibility: hidden;
 }
 
 /* =========PENGATURAN RESPONSIVE DESAIN========= */

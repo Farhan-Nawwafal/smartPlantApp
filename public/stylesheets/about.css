@@ -1,13 +1,15 @@
 body {
-
-    font-family: Arial, sans-serif;
+    background-image: url('../images/background_daun.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
-.team-section {
+/* .team-section {
     background: url('../images/Daun5.jpg') no-repeat center center/cover;
     min-height: 100vh;
     padding: 100px 15px;
-}
+} */
 
 .card-img-top {
     width: 100px;
