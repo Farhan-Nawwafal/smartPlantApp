@@ -1,51 +1,29 @@
-<div id="grafik" class="card" style="width: 45rem">
-      <div class="d-flex justify-content-center card-header">
-        <h2 class="text-white text-center">ANALYTICS</h2>
-      </div>
-      <div class="d-flex justify-content-around" id="chart-button">
-        <button
-          class="btn btn-light btn-sm text-black"
-          id="b-suhu-udara"
-          value="Suhu Udara"
-        >
-          Suhu Udara
-        </button>
-        <button
-          class="btn btn-light btn-sm text-black"
-          id="b-kelembapan-tanah"
-          value="Kelembapan Tanah"
-        >
-          Kelembapan Tanah
-        </button>
-        <button
-          class="btn btn-light btn-sm text-black"
-          id="b-total-penyiraman"
-          value="Total Penyiraman"
-        >
-          Total Penyiraman
-        </button>
-        <div class="btn-group">
-          <button
-            type="button"
-            class="btn btn-light dropdown-toggle text-black"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Show by
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Hari</a></li>
-            <li><a class="dropdown-item" href="#">Minggu</a></li>
-            <li><a class="dropdown-item" href="#">Bulan</a></li>
-            <li><a class="dropdown-item" href="#">Tahun</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="card-body">
-        <h3 class="text-center" id="titleChart"></h3>
-        <canvas id="canvas-chart"></canvas>
-      </div>
-    </div>
 
+Beberapa hal yang perlu diinstal :
+1. cookie-parser
+2. mysql
+3. ws
+4. socket.io
+5. dotenv
+6. debug.
+7. ejs
+8. express-ejs-layouts
+9. http-errors
+10. morgan
+11. express
 
-    
+              <% datas.forEach(property => { %> 
+                <% if (property.parameter_kelembapan === 'kelembapan_tanah') { %>
+                  Kelembapan Tanah : <br /> <%= property.kelembapan_terbaru; %>  
+                <% } %> 
+              <% }) %>
+
+                            <% datas.forEach(property => { %> 
+                <% if (property.parameter_suhu === 'suhu_udara') { %> 
+                  Suhu Udara : <br /> <%= property.suhu_terbaru; %>°C
+                <% } %> 
+              <% }) %>
+
+<% datas.forEach(property => { %> 
+                Total Penyiraman Air : <br /> <%= property.jumlah_penyiraman; %>
+              <% }) %>

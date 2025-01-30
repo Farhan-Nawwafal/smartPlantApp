@@ -10,105 +10,119 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="stylesheets/navbar.css" />
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
 
-    <% if (halaman) { %>
-      <link rel="stylesheet" href="stylesheets/<%= halaman %>.css" />
-    <% } %>
-
-    <!-- JALANKAN FILE CSS INI KETIKA HALAMAN NYA TIDAK JELAS (START) -->
-  </head>
-  <body>
-    <div class="container-fluid" style="--bs-gutter-x: 0 !important">
-      <!-- NAVBAR START -->
-      <% if (halaman) { %>
-        <nav class="navbar navbar-expand-lg w-100" id="navbarContainer">
-          <div class="d-flex justify-content-between w-100">
-            <div class="collapse navbar-collapse" id="icons">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <img
-                    src="./icons/plant-guard-logo.png"
-                    alt=""
-                    width="70"
-                    height="70"
-                  />
-                </li>
-              </ul>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <!-- PR : UBAH CODE INI JADI LEBIH RINGKAS -->
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <% if (halaman === 'home') { %>
-                    <a class="nav-link active" href="http://localhost:3000/<%= halaman %>">
-                      <img
-                        src="icons/green-bullet.png"
-                        width="15"
-                        height="15"
-                        alt=""
-                      />
-                      Home
-                    </a>
-                  <% } %>
-                  <% if (halaman !== 'home') { %>
-                    <a class="nav-link" href="http://localhost:3000/home">Home</a>
-                  <% } %>
-                </li>
-  
-                <li class="nav-item">
-                  <% if (halaman === 'dashboard') { %>
-                    <a class="nav-link active" href="http://localhost:3000/<%= halaman %>">
-                      <img
-                        src="icons/green-bullet.png"
-                        width="15"
-                        height="15"
-                        alt=""
-                      />
-                      Dashboard
-                    </a>
-                  <% } %>
-                  <% if (halaman !== 'dashboard') { %>
-                    <a class="nav-link" href="http://localhost:3000/dashboard">Dashboard</a>
-                  <% } %>
-                </li>
-  
-                <li class="nav-item">
-                  <% if (halaman === 'about') { %>
-                    <a class="nav-link active" href="http://localhost:3000/<%= halaman %>">
-                      <img
-                        src="icons/green-bullet.png"
-                        width="15"
-                        height="15"
-                        alt=""
-                      />
-                      About
-                    </a>
-                  <% } %>
-                  <% if (halaman !== 'about') { %>
-                    <a class="nav-link" href="http://localhost:3000/about">About</a>
-                  <% } %>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </nav>
-      <% } %>
-      
-      <!-- NAVBAR END -->
-
-      <%- body %>
-    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+
+    <% if (halaman) { %>
+    <link rel="stylesheet" href="/stylesheets/<%= halaman %>.css" />
+    <% } %>
+  </head>
+  <body>
+    <div class="container-fluid" style="--bs-gutter-x: 0 !important">
+      <!-- NAVBAR START -->
+      <% if (halaman) { %>
+      <nav class="navbar navbar-expand-lg w-100" id="navbarContainer">
+        <div class="d-flex justify-content-between w-100">
+          <div class="collapse navbar-collapse" id="icons">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <img
+                  src="./icons/plant-guard-logo.png"
+                  alt=""
+                  width="70"
+                  height="70"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <% if (halaman === 'home') { %>
+                <a class="nav-link active" href="/<%= halaman %>">
+                  <img
+                    src="icons/green-bullet.png"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />
+                  Home
+                </a>
+                <% } else { %>
+                <a class="nav-link" href="/home">Home</a>
+                <% } %>
+              </li>
+
+              <li class="nav-item">
+                <% if (halaman === 'dashboard') { %>
+                <a class="nav-link active" href="/<%= halaman %>">
+                  <img
+                    src="icons/green-bullet.png"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />
+                  Dashboard
+                </a>
+                <% } else { %>
+                <a class="nav-link" href="/dashboard">Dashboard</a>
+                <% } %>
+              </li>
+
+              <li class="nav-item">
+                <% if (halaman === 'about') { %>
+                <a class="nav-link active" href="/<%= halaman %>">
+                  <img
+                    src="icons/green-bullet.png"
+                    width="15"
+                    height="15"
+                    alt=""
+                  />
+                  About
+                </a>
+                <% } else { %>
+                <a class="nav-link" href="/about">About</a>
+                <% } %>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <% } %>
+      <!-- NAVBAR END -->
+
+      <%- body %>
+    </div>
+
     <% if (halaman === 'dashboard') { %>
-      <script src="javascripts/dateDashboard.js"></script>
-      <!-- Link CDN JS ChartJS -->
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      <script src="javascripts/charts.js"></script>
+    <script src="/javascripts/dateDashboard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="/javascripts/charts.js"></script>
+    <script>
+      // Set interval untuk memperbarui data setiap 10 detik
+      setInterval(() => {
+        // Mengambil data dalam format JSON dari route /dashboard/getLatestData
+        fetch('/dashboard/getLatestData') 
+          .then(response => response.json())
+          .then(data => {
+            // Update elemen dengan data terbaru
+            document.getElementById("suhuUdara").innerHTML =
+              `Suhu Udara : <br /> ${data[0].suhu_terbaru}°C`;
+    
+            document.getElementById("kelembapanTanah").innerHTML =
+              `Kelembapan Tanah : <br /> ${data[0].kelembapan_terbaru}`;
+    
+            document.getElementById("penyiramanAir").innerHTML =
+              `Total Penyiraman Air : <br /> ${data[0].jumlah_penyiraman} kali`;
+          })
+          .catch(error => console.log(error));
+      }, 500);
+    </script>
     <% } %>
   </body>
 </html>

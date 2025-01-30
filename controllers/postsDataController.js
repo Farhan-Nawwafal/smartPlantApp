@@ -8,7 +8,7 @@ con.query('USE zorinosteam', (err) => {
     console.log('Berhasil masuk ke database!');
 });
 
-const postSuhuUdara  = (req, res) => {
+exports.postSuhuUdara  = (req, res) => {
     const { value } = req.body;
     if (!value) {
         return res.status(400).json({
@@ -43,7 +43,7 @@ const postSuhuUdara  = (req, res) => {
     });
 };
 
-const postKelembapanTanah = (req, res) => {
+exports.postKelembapanTanah = (req, res) => {
     const { value } = req.body;
     if (!value) {
         return res.status(400).json({
@@ -78,7 +78,7 @@ const postKelembapanTanah = (req, res) => {
     });
 };
 
-const postPenyiramanAir = (req, res) => {
+exports.postPenyiramanAir = (req, res) => {
     const { value } = req.body;
     if (!value) {
         return res.status(400).json({
@@ -112,5 +112,3 @@ const postPenyiramanAir = (req, res) => {
         );
     });
 };
-
-module.exports = {postSuhuUdara, postKelembapanTanah, postPenyiramanAir};

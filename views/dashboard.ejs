@@ -21,12 +21,12 @@
         </div>
         <div class="card-body">
           <div class="value-text">
-            <p class="card-text text-center fs-6">
-              <% datas.forEach(property => { %> 
-                <% if (property.parameter_suhu === 'suhu_udara') { %> 
-                  Suhu Udara : <br /> <%= property.suhu_terbaru; %>°C 
-                <% } %> 
-              <% }) %>
+            <p class="card-text text-center fs-6" id="suhuUdara">
+              <% if (datas && datas.length > 0) { %>
+                Suhu Udara : <br /> <%= datas[0].suhu_terbaru %>°C
+              <% } else { %>
+                Data suhu udara belum tersedia.
+              <% } %>
             </p>
           </div>
         </div>
@@ -38,12 +38,12 @@
         </div>
         <div class="card-body">
           <div class="value-text">
-            <p class="text-center fs-6">
-              <% datas.forEach(property => { %> 
-                <% if (property.parameter_kelembapan === 'kelembapan_tanah') { %>
-                  Kelembapan Tanah : <br /> <%= property.kelembapan_terbaru; %> 
-                <% } %> 
-              <% }) %>
+            <p class="text-center fs-6" id="kelembapanTanah">
+              <% if (datas && datas.length > 0) { %>
+                Kelembapan Tanah : <br /> <%= datas[0].kelembapan_terbaru %>
+              <% } else { %>
+                Data kelembapan tanah belum tersedia.
+              <% } %>
             </p>
           </div>
         </div>
@@ -55,15 +55,18 @@
         </div>
         <div class="card-body">
           <div class="value-text">
-            <p class="text-center fs-6">
-              <% datas.forEach(property => { %> 
-                Total Penyiraman Air : <br> <%= property.jumlah_penyiraman; %> kali 
-              <% }) %>
+            <p class="text-center fs-6" id="penyiramanAir">
+              <% if (datas && datas.length > 0) { %>
+                Total Penyiraman Air : <br /> <%= datas[0].jumlah_penyiraman %> kali
+              <% } else { %>
+                Data penyiraman air belum tersedia.
+              <% } %>
             </p>
           </div>
         </div>
       </div>
     </div>
+
     <div id="grafik" class="card" style="width: 45rem">
       <div class="d-flex justify-content-center card-header">
         <h2 class="text-white text-center">ANALYTICS</h2>

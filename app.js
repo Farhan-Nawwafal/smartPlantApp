@@ -4,7 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const expressLayouts = require('express-ejs-layouts');
-const bodyParser = require('body-parser');
+
 
 // IMPORT ROUTES START
 const homeRouter = require('./routes/home');
@@ -12,8 +12,10 @@ const dashboardRouter = require('./routes/dashboard');
 const aboutRouter = require('./routes/about');
 const defaultRouter = require('./routes/default');
 const plantsRoute = require('./routes/plants');
-
 // IMPORT ROUTES END
+
+// import controller
+
 const app = express();
 
 // view engine setup
