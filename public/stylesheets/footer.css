@@ -1,0 +1,9 @@
+#footerHome {
+    visibility: hidden;
+    background-color: #adafad5b;
+}
+
+#footerGeneral {
+    background-color: #adafad5b;
+    margin-top: 2em;
+}

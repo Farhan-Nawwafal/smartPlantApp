@@ -5,5 +5,5 @@ const getDate = date.getDate();
 const getMonth = date.getMonth() + 1;
 const getYear = date.getFullYear();
 
-const getFullDate = `${getDate}-${getMonth}-${getYear}`; // Format penulisan tanggal di Indonesia
+const getFullDate = `${getDate}/${getMonth}/${getYear}`; // Format penulisan tanggal di Indonesia
 spanDate.textContent = getFullDate;

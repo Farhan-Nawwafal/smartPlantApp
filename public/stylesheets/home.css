@@ -29,15 +29,22 @@ body {
 
 #bottom-page {
     margin-top: 150vh;
-    margin-bottom: 20em;
-}
-
-#bottom-page .container {
-    margin-left: 15em;
+    margin-bottom: 22em;
+    display: none;
 }
 
 #mokup {
     width: 40rem;
+}
+
+@keyframes homeContent {
+    to {
+        opacity: 1;
+    }
+}
+.bottom-content {
+    opacity: 0;
+    animation: homeContent ease-in 1.7s forwards; 
 }
 
 #title {

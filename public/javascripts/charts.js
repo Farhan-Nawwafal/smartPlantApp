@@ -58,13 +58,13 @@ suhuUdara.addEventListener('click', () => {
   titleChart.textContent = parameter;
   // canvasChart.style.visibility = 'visible';
 
-  suhuUdara.classList.replace('btn-light', 'btn-primary');
+  suhuUdara.classList.replace('btn-light', 'btn-dark');
   suhuUdara.classList.replace('text-black', 'text-light');
   
-  kelembapanTanah.classList.replace('btn-primary', 'btn-light');
+  kelembapanTanah.classList.replace('btn-dark', 'btn-light');
   kelembapanTanah.classList.replace('text-light', 'text-black');
   
-  totalPenyiraman.classList.replace('btn-primary', 'btn-light');
+  totalPenyiraman.classList.replace('btn-dark', 'btn-light');
   totalPenyiraman.classList.replace('text-light', 'text-black');
 
   updateChart();
@@ -75,13 +75,13 @@ kelembapanTanah.addEventListener('click', () => {
   titleChart.textContent = parameter;
   // canvasChart.style.visibility = 'visible';
 
-  suhuUdara.classList.replace('btn-primary', 'btn-light');
+  suhuUdara.classList.replace('btn-dark', 'btn-light');
   suhuUdara.classList.replace('text-light', 'text-black');
             
-  kelembapanTanah.classList.replace('btn-light', 'btn-primary');
+  kelembapanTanah.classList.replace('btn-light', 'btn-dark');
   kelembapanTanah.classList.replace('text-black', 'text-light');
   
-  totalPenyiraman.classList.replace('btn-primary', 'btn-light');
+  totalPenyiraman.classList.replace('btn-dark', 'btn-light');
   totalPenyiraman.classList.replace('text-light', 'text-black');
 
   updateChart();
@@ -92,13 +92,13 @@ totalPenyiraman.addEventListener('click', () => {
   titleChart.textContent = parameter;
   // canvasChart.style.visibility = 'visible';
 
-  suhuUdara.classList.replace('btn-primary', 'btn-light');
+  suhuUdara.classList.replace('btn-dark', 'btn-light');
   suhuUdara.classList.replace('text-light', 'text-black');
   
-  kelembapanTanah.classList.replace('btn-primary', 'btn-light');
+  kelembapanTanah.classList.replace('btn-dark', 'btn-light');
   kelembapanTanah.classList.replace('text-light', 'text-black');
   
-  totalPenyiraman.classList.replace('btn-light', 'btn-primary');
+  totalPenyiraman.classList.replace('btn-light', 'btn-dark');
   totalPenyiraman.classList.replace('text-black', 'text-light');
 
   updateChart();

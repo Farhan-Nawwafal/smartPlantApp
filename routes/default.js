@@ -6,7 +6,7 @@ router.get('/', (req, res, next) => {
     res.render('default', {
         layout: 'layouts/main',
         title: 'Page Not Found!',
-        css: '', // untuk pengaturan css
+        halaman: '',
     });
 });
 

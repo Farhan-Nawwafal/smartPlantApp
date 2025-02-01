@@ -32,32 +32,31 @@ body {
 }
 
 #suhu-udara {
-    height: 20em;
     color: white;
     background-color: transparent;
     background-image: url('../images/bg_suhu_udara.png');
+    background-repeat: no-repeat;
     border-radius: 20px;
 }
 
 #kelembapan-tanah {
-    height: 20em;
     color: white;
     background-color: transparent;
     background-image: url('../images/bg_kelembapan_tanah.png');
+    background-repeat: no-repeat;
     border-radius: 20px;
-    margin-bottom: 4em;
 }
 
 #penyiraman-air {
-    height: 20em;
     color: white;
     background-color: transparent;
     background-image: url('../images/bg_penyiraman_air.png');
+    background-repeat: no-repeat;
     border-radius: 20px;
 }
 
-.value-text {
-    margin-top: 4.7em;
+.metrik {
+    margin-top: 5em
 }
 
 #grafik {
@@ -65,12 +64,8 @@ body {
     background-color: #d8d5d5a1;
 }
 
-#grafik .card-header {
-    background-color: #cac7c7b4;
-}
-
-#grafik .card-header h2 {
-    margin: auto 0;
+#grafik h2 {
+    margin-top: .3em;
 }
 
 #chart-button {
@@ -78,8 +73,7 @@ body {
 }
 
 #grafik .card-body h3 {
-    margin-top: 1.6em;
-    margin-bottom: .6em;
+    margin-top: .6em;
 }
 
 #canvas-chart {

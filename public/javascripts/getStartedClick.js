@@ -1,8 +1,9 @@
-const getStartedBtn = document.getElementById('btn');
-const getMokupImg = document.getElementById('mokup');
-const getContainerTitle = document.getElementById('title');
+const getStartedBtn = document.getElementById('scroll-btn');
+const getBottomPage = document.getElementById('bottom-page');
+const getFooter = document.getElementById('footerHome');
 
 getStartedBtn.addEventListener('click', () => {
-	getMokupImg.style.visibility = 'visible';
-	getContainerTitle.style.visibility = 'visible';
+	getBottomPage.style.display = 'block';
+	getBottomPage.classList.toggle('bottom-content');
+	getFooter.style.visibility = 'visible';
 });

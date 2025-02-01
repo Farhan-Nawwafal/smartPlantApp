@@ -7,68 +7,71 @@
 
 <!-- CONTENT START -->
 <div class="container-fluid" id="content">
+  <!-- FLEXBOX TITLE START -->
   <div class="d-flex justify-content-end header-title-content">
     <p id="date">
       <span id="dateContent"></span>
       <img src="./icons/calendar_month.png" alt="" width="25" height="25" />
     </p>
   </div>
+  <!-- FLEXBOX TITLE END -->
+  <!-- FLEXBOX BETWEEN METRICS AND GRAPH START -->
   <div class="d-flex justify-content-evenly" id="main-metrik">
+    <!-- FLEXBOX METRICS TEXT START -->
     <div class="d-flex justify-content-around" id="metrik-text">
-      <div id="suhu-udara" class="card" style="width: 12rem">
-        <div class="d-flex justify-content-end card-header">
-          <img src="./icons/suhu_udara.png" alt="" />
-        </div>
-        <div class="card-body">
-          <div class="value-text">
-            <p class="card-text text-center fs-6" id="suhuUdara">
-              <% if (datas && datas.length > 0) { %>
-                Suhu Udara : <br /> <%= datas[0].suhu_terbaru %>°C
-              <% } else { %>
-                Data suhu udara belum tersedia.
-              <% } %>
-            </p>
-          </div>
+      <div id="penyiraman-air" class="card" style="width: 12rem">
+        <div class="card-body metrik">
+          <h5 class="card-title text-center">
+            <img src="./icons/total_penyiraman.png" alt="" />
+          </h5>
+          <p class="card-text text-center">
+            <% if (datas && datas.length > 0) { %> 
+              <%= datas[0].jumlah_penyiraman %>x 
+            <% } else { %> 
+                Data penyiraman belum tersedia. 
+            <% } %>
+          </p>
+          <p class="card-text text-center">Total Watering Today</p>
         </div>
       </div>
 
       <div id="kelembapan-tanah" class="card" style="width: 12rem">
-        <div class="d-flex justify-content-end card-header">
-          <img src="./icons/kelembapan_tanah.png" alt="" />
-        </div>
-        <div class="card-body">
-          <div class="value-text">
-            <p class="text-center fs-6" id="kelembapanTanah">
-              <% if (datas && datas.length > 0) { %>
-                Kelembapan Tanah : <br /> <%= datas[0].kelembapan_terbaru %>
-              <% } else { %>
-                Data kelembapan tanah belum tersedia.
-              <% } %>
-            </p>
-          </div>
+        <div class="card-body metrik">
+          <h5 class="card-title text-center">
+            <img src="./icons/kelembapan_tanah.png" alt="" />
+          </h5>
+          <p class="card-text text-center">
+            <% if (datas && datas.length > 0) { %> 
+              <%= datas[0].kelembapan_terbaru %> cb 
+            <% } else { %> 
+              Data kelembapan tanah belum tersedia. 
+            <% } %>
+          </p>
+          <p class="card-text text-center">Current Soil Moisture</p>
         </div>
       </div>
 
-      <div id="penyiraman-air" class="card" style="width: 12rem">
-        <div class="d-flex justify-content-end card-header">
-          <img src="./icons/total_penyiraman.png" alt="" />
-        </div>
-        <div class="card-body">
-          <div class="value-text">
-            <p class="text-center fs-6" id="penyiramanAir">
-              <% if (datas && datas.length > 0) { %>
-                Total Penyiraman Air : <br /> <%= datas[0].jumlah_penyiraman %> kali
-              <% } else { %>
-                Data penyiraman air belum tersedia.
-              <% } %>
-            </p>
-          </div>
+      <div class="card" id="suhu-udara" style="width: 12rem">
+        <div class="card-body metrik">
+          <h5 class="card-title text-center">
+            <img src="./icons/suhu_udara.png" alt="" />
+          </h5>
+          <p class="card-text text-center">
+            <% if (datas && datas.length > 0) { %> 
+              <%= datas[0].suhu_terbaru %>°C 
+            <% } else { %> 
+              Data suhu udara belum tersedia. 
+            <% } %>
+          </p>
+          <p class="card-text text-center">Current Temperature</p>
         </div>
       </div>
+      <!-- FLEXBOX METRICS TEXT END -->
     </div>
+    <!-- FLEXBOX BETWEEN METRICS AND GRAPH END -->
 
-    <div id="grafik" class="card" style="width: 45rem">
-      <div class="d-flex justify-content-center card-header">
+    <div id="grafik" class="card rounded" style="width: 45rem">
+      <div class="d-flex justify-content-center">
         <h2 class="text-white text-center">ANALYTICS</h2>
       </div>
       <div class="d-flex justify-content-around" id="chart-button">
@@ -96,7 +99,7 @@
         <div class="btn-group">
           <button
             type="button"
-            class="btn btn-light dropdown-toggle text-black"
+            class="btn btn-dark dropdown-toggle text-white"
             data-bs-toggle="dropdown"
             aria-expanded="false"
           >
@@ -110,7 +113,7 @@
           </ul>
         </div>
       </div>
-      <div class="card-body">
+      <div class="card-body chart">
         <h3 class="text-center" id="titleChart">Charts</h3>
         <canvas id="canvas-chart"></canvas>
       </div>

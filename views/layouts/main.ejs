@@ -10,8 +10,17 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <!-- CSS FONT START -->
+    <link rel="stylesheet" href="/stylesheets/font.css">
+    <!-- CSS FONT END -->
 
+    <!-- CSS NAVBAR START -->
+    <link rel="stylesheet" href="/stylesheets/navbar.css" />
+    <!-- CSS NAVBAR END -->
+
+    <!-- CSS FOOTER START -->
+    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <!-- CSS FOOTER END -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
@@ -19,14 +28,16 @@
     ></script>
 
     <% if (halaman) { %>
-    <link rel="stylesheet" href="/stylesheets/<%= halaman %>.css" />
+      <link rel="stylesheet" href="/stylesheets/<%= halaman %>.css" />
+    <% } else { %>
+      <link rel="stylesheet" href="/stylesheets/default.css">
     <% } %>
   </head>
   <body>
     <div class="container-fluid" style="--bs-gutter-x: 0 !important">
       <!-- NAVBAR START -->
       <% if (halaman) { %>
-      <nav class="navbar navbar-expand-lg w-100" id="navbarContainer">
+      <nav class="navbar sticky-top navbar-expand-lg w-100" id="navbarContainer">
         <div class="d-flex justify-content-between w-100">
           <div class="collapse navbar-collapse" id="icons">
             <ul class="navbar-nav">
@@ -96,7 +107,26 @@
       <% } %>
       <!-- NAVBAR END -->
 
+      <!-- CONTENT START -->
       <%- body %>
+      <!-- CONTENT END -->
+
+      <!-- FOOTER START -->
+      <% if (halaman === 'home') { %>
+        <div class="card" id="footerHome">
+          <div class="card-footer text-white text-center">
+            Plant Guard© 2024, All rights reserved
+          </div>
+        </div>
+      <% } else { %>
+        <div class="card" id="footerGeneral">
+          <div class="card-footer text-white text-center">
+            Plant Guard© 2024, All rights reserved
+          </div>
+        </div>
+      <% } %>
+     
+      <!-- FOOTER END -->
     </div>
 
     <% if (halaman === 'dashboard') { %>
@@ -105,24 +135,27 @@
     <script src="/javascripts/charts.js"></script>
     <script>
       // Set interval untuk memperbarui data setiap 10 detik
-      setInterval(() => {
-        // Mengambil data dalam format JSON dari route /dashboard/getLatestData
-        fetch('/dashboard/getLatestData') 
-          .then(response => response.json())
-          .then(data => {
-            // Update elemen dengan data terbaru
-            document.getElementById("suhuUdara").innerHTML =
-              `Suhu Udara : <br /> ${data[0].suhu_terbaru}°C`;
+      // setInterval(() => {
+      //   // Mengambil data dalam format JSON dari route /dashboard/getLatestData
+      //   fetch('/dashboard/getLatestData') 
+      //     .then(response => response.json())
+      //     .then(data => {
+      //       // Update elemen dengan data terbaru
+      //       document.getElementById("suhuUdara").innerHTML =
+      //         `Suhu Udara : <br /> ${data[0].suhu_terbaru}°C`;
     
-            document.getElementById("kelembapanTanah").innerHTML =
-              `Kelembapan Tanah : <br /> ${data[0].kelembapan_terbaru}`;
+      //       document.getElementById("kelembapanTanah").innerHTML =
+      //         `Kelembapan Tanah : <br /> ${data[0].kelembapan_terbaru}`;
     
-            document.getElementById("penyiramanAir").innerHTML =
-              `Total Penyiraman Air : <br /> ${data[0].jumlah_penyiraman} kali`;
-          })
-          .catch(error => console.log(error));
-      }, 500);
+      //       document.getElementById("penyiramanAir").innerHTML =
+      //         `Total Penyiraman Air : <br /> ${data[0].jumlah_penyiraman} kali`;
+      //     })
+      //     .catch(error => console.log(error));
+      // }, 500);
     </script>
+    <% } %>
+    <% if (halaman === 'home') { %>
+      <script src="/javascripts/getStartedClick.js"></script>
     <% } %>
   </body>
 </html>
