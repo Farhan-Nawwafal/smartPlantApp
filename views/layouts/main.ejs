@@ -19,7 +19,9 @@
     <!-- CSS NAVBAR END -->
 
     <!-- CSS FOOTER START -->
-    <link rel="stylesheet" href="/stylesheets/footer.css">
+    <% if (halaman) { %>
+      <link rel="stylesheet" href="/stylesheets/footer.css">
+    <% } %>
     <!-- CSS FOOTER END -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
@@ -38,18 +40,11 @@
       <!-- NAVBAR START -->
       <% if (halaman) { %>
       <nav class="navbar sticky-top navbar-expand-lg w-100" id="navbarContainer">
-        <div class="d-flex justify-content-between w-100">
+        <div class="d-flex justify-content-center w-100">
           <div class="collapse navbar-collapse" id="icons">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <img
-                  src="./icons/plant-guard-logo.png"
-                  alt=""
-                  width="70"
-                  height="70"
-                />
-              </li>
-            </ul>
+            <a class="navbar-brand text-white" href="#">
+              <img src="/icons/plant-guard-logo.png" alt="Logo" width="70" height="70" />
+            </a>
           </div>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
@@ -113,13 +108,19 @@
 
       <!-- FOOTER START -->
       <% if (halaman === 'home') { %>
-        <div class="card" id="footerHome">
+        <div class="card mt-auto" id="footerHome">
+          <div class="card-footer text-white text-center">
+            Plant Guard© 2024, All rights reserved
+          </div>
+        </div>
+      <% } else if(halaman === 'dashboard') { %>
+        <div class="card mt-2" id="footerDashboard">
           <div class="card-footer text-white text-center">
             Plant Guard© 2024, All rights reserved
           </div>
         </div>
       <% } else { %>
-        <div class="card" id="footerGeneral">
+        <div class="card fixed-bottom" id="footerAbout">
           <div class="card-footer text-white text-center">
             Plant Guard© 2024, All rights reserved
           </div>

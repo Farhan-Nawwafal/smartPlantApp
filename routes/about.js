@@ -3,39 +3,45 @@ const router = express.Router();
 
 const identities = [
     {
-        name: 'bagas',
-        fullName: 'Muhammad Lutfi Bagaskara Yodi',
-        nim: 10123147,
+        name: 'farhan',
+        fullName: 'Farhan Nawwafal P.',
+        nim: 10123470,
+        role: 'Back End',
     },
 
     {
         name: 'zaidan',
-        fullName: 'Muhammad Zaidan Azhari',
+        fullName: 'M. Zaidan Azhari',
         nim: 10123136,
+        role: 'UI/UX',
     },
-
+    
     {
-        name: 'delia',
-        fullName: 'Delia Aksani Putri',
-        nim: 10123156,
+        name: 'yogi',
+        fullName: 'M. Yogi Ady P.',
+        nim: 10123170,
+        role: 'UI/UX',
     },
 
     {
         name: 'aldo',
         fullName: 'Aldo Revaldo',
         nim: 10123163,
+        role: 'IoT',
     },
 
     {
-        name: 'yogi',
-        fullName: 'Muhammad Yogi Ady Pratama',
-        nim: 10123170,
+        name: 'bagas',
+        fullName: 'M. Lutfi Bagaskara',
+        nim: 10123147,
+        role: 'Front End',
     },
 
     {
-        name: 'farhan',
-        fullName: 'Farhan Nawwafal Pramudia',
-        nim: 10123470,
+        name: 'delia',
+        fullName: 'Delia Aksani P.',
+        nim: 10123156,
+        role: 'Front End',
     },
     
 ]

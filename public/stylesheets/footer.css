@@ -3,7 +3,10 @@
     background-color: #adafad5b;
 }
 
-#footerGeneral {
+#footerDashboard {
     background-color: #adafad5b;
-    margin-top: 2em;
+}
+
+#footerAbout {
+    background-color: #adafad5b;
 }

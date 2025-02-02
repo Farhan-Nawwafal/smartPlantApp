@@ -1,29 +1,18 @@
 <!-- OUR TEAM START -->
-<section
-class="team-section d-flex flex-column align-items-center text-center py-5"
->
-<h1 class="text-white mb-5">Our Team</h1>
-<div
-  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4 justify-content-center"
->
+<div class="d-flex justify-content-center">
   <% if (!identities.length) {} %>
   <!-- LOOPING UNTUK INDETITAS TEAM START -->
   <% identities.forEach(property => { %>
-  <div class="col">
-    <div class="card bg-dark text-white text-center border-0">
-      <img
-        src="http://localhost:3000/images/<%= property.name %>.jpg"
-        class="card-img-top rounded-circle p-3"
-        alt="Team Member"
-      />
-      <div class="card-body">
-        <h5 class="card-title"><%= property.fullName %></h5>
-        <p class="card-text"><%= property.nim %></p>
-      </div>
+  <div class="card mt-5 mb-5 card-team" style="width: 14rem">
+    <img src="/images/<%= property.name; %>.jpg" width="204" height="204" class="card-img-center rounded" alt="<%= property.name; %>" />
+    <div class="card-body text-center text-white">
+      <p class="card-text">
+        <%= property.nim; %> <br>
+        <%= property.fullName %> <br>
+        <%= property.role %>
+      </p>
     </div>
   </div>
   <% }) %>
   <!-- LOOPING UNTUK INDETITAS TEAM START -->
 </div>
-</section>
-<!-- OUR TEAM END
