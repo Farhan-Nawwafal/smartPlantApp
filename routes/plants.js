@@ -1,13 +1,33 @@
 const express = require('express');
 const router = express.Router();
 
-// MANGAMBIL DATA DI CONTROLLER
+// MENGAMBIL DATA DI CONTROLLER
 const getPostsController = require('../controllers/postsDataController');
+const getDatasController = require('../controllers/getsDataController');
 
 // CREATE ENDPOINT FOR GET DATA START
-// router.get('/getPlantValue', test.getAllDatas);
-// router.get('/getPlantValue/kelembapanTanah', getKelembapanTanah);
-// router.get('/getPlantValue/penyiramanAir', getPenyiramanAir);
+// router.get('/api/data', async (req, res) => {
+//     const { parameter } = req.query;
+//     try {
+//         let data;
+//         switch (parameter) {
+//             case "Suhu Udara":
+//                 data = await getDatasController.getSuhuUdara();
+//                 break;
+//             case "Kelembapan Tanah":
+//                 data = await getDatasController.getKelembapanTanah();
+//                 break;
+//             case "Total Penyiraman":
+//                 data = await getDatasController.getPenyiramanAir();
+//                 break;
+//             default:
+//                 return res.status(400).json({ error: "Parameter tidak valid" });
+//         }
+//         res.json(data);
+//     } catch (error) {
+//         res.status(500).json({ error: "Gagal mengambil data" });
+//     }
+// });
 // CREATE ENDPOINT FOR GET DATA END
 
 // CREATE ENDPOINT FOR POST DATA START
