@@ -100,20 +100,13 @@
           Total Penyiraman
         </button>
         <div class="btn-group">
-          <button
-            type="button"
-            class="btn btn-dark dropdown-toggle text-white"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Show by
-          </button>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Hari</a></li>
-            <li><a class="dropdown-item" href="#">Minggu</a></li>
-            <li><a class="dropdown-item" href="#">Bulan</a></li>
-            <li><a class="dropdown-item" href="#">Tahun</a></li>
-          </ul>
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Show By</option>
+            <option value="Harian">Harian</option>
+            <option value="Mingguan">Mingguan</option>
+            <option value="Bulanan">Bulanan</option>
+            <option value="Tahunan">Tahunan</option>
+          </select>
         </div>
       </div>
       <div class="card-body chart">

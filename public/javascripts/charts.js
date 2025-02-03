@@ -8,6 +8,8 @@ const totalPenyiraman = document.getElementById("b-total-penyiraman");
 const kedalamanAir = document.getElementById("b-kedalaman-air");
 const titleChart = document.getElementById("titleChart");
 const canvasChart = document.getElementById("canvas-chart");
+const buttonShowBy = document.getElementById('dropdown');
+
 
 // Fungsi untuk membuat grafik
 const createChart = (ctx, parameter, data, labels) => {
