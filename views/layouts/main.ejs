@@ -141,56 +141,20 @@
         fetch('/dashboard/getLatestData') 
           .then(response => response.json())
           .then(data => {
+            console.log("Fetching data at:", new Date().toLocaleTimeString());
             // Update elemen dengan data terbaru
             document.getElementById("suhuUdara").innerHTML =
-              `Suhu Udara : <br /> ${data[0].suhu_terbaru}°C`;
+              `${data[0].suhu_terbaru}°C`;
     
             document.getElementById("kelembapanTanah").innerHTML =
-              `Kelembapan Tanah : <br /> ${data[0].kelembapan_terbaru}`;
+              `${data[0].kelembapan_terbaru} cb`;
     
             document.getElementById("penyiramanAir").innerHTML =
-              `Total Penyiraman Air : <br /> ${data[0].jumlah_penyiraman} kali`;
+              `${data[0].jumlah_penyiraman} kali`;
           })
           .catch(error => console.log(error));
       }, 500);
     </script>
-
-    <!-- <script>
-      // Ambil semua tombol untuk chart
-      const buttons = document.querySelectorAll('#chart-button button');
-    
-      // Fungsi untuk update chart berdasarkan parameter
-      function updateChart(parameter) {
-        fetch(`/api/data?parameter=${parameter}`)
-          .then(response => response.json())
-          .then(data => {
-            // Proses data dan update chart disini
-            console.log(data); // Tampilkan data di console untuk debugging
-    
-            // Update chart di frontend sesuai dengan parameter (misal menggunakan Chart.js)
-            const ctx = document.getElementById('canvas-chart').getContext('2d');
-            const chart = new Chart(ctx, {
-              type: 'line', // Contoh type chart
-              data: {
-                labels: data.map(item => item.tanggal),  // Asumsi data memiliki tanggal
-                datasets: [{
-                  label: parameter,
-                  data: data.map(item => item.nilai),  // Data sesuai dengan parameter
-                }]
-              }
-            });
-          })
-          .catch(err => console.error('Error fetching data:', err));
-      }
-    
-      // Event listener untuk tombol
-      buttons.forEach(button => {
-        button.addEventListener('click', function () {
-          const parameter = this.value;  // Ambil nilai dari tombol
-          updateChart(parameter);        // Update chart berdasarkan parameter yang dipilih
-        });
-      });
-    </script> -->
     
     <% } %>
     <% if (halaman === 'home') { %>

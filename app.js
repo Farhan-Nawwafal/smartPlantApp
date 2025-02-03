@@ -31,6 +31,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
 // ROUTER START
 app.use('/', defaultRouter);
 app.use('/home', homeRouter);
@@ -38,6 +39,7 @@ app.use('/dashboard', dashboardRouter);
 app.use('/about', aboutRouter);
 app.use('/api', plantsRoute);
 // ROUTER END
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
