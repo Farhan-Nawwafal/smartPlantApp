@@ -4,6 +4,7 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const expressLayouts = require('express-ejs-layouts');
+const cors = require('cors');
 
 
 // IMPORT ROUTES START
@@ -24,6 +25,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 // app.use(bodyParser.urlencoded({ extended: true }));
+app.use(cors());
 app.use(expressLayouts);
 app.use(logger('dev'));
 app.use(express.json());

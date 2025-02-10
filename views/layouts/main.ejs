@@ -141,7 +141,6 @@
         fetch('/dashboard/getLatestData') 
           .then(response => response.json())
           .then(data => {
-            console.log("Fetching data at:", new Date().toLocaleTimeString());
             // Update elemen dengan data terbaru
             document.getElementById("suhuUdara").innerHTML =
               `${data[0].suhu_terbaru}°C`;

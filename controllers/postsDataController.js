@@ -78,37 +78,37 @@ exports.postKelembapanTanah = (req, res) => {
     });
 };
 
-exports.postPenyiramanAir = (req, res) => {
-    const { value } = req.body;
-    if (!value) {
-        return res.status(400).json({
-            status: "false",
-            message: "Data tidak ditemukan!",
-        })
-    }
+// exports.postPenyiramanAir = (req, res) => {
+//     const { value } = req.body;
+//     if (!value) {
+//         return res.status(400).json({
+//             status: "false",
+//             message: "Data tidak ditemukan!",
+//         })
+//     }
 
-    const query = `INSERT INTO plant_values(parameter_name, value) VALUES ('penyiraman_air', ?)`;
-    con.query(query, [value] ,(err, result) => {
-        if (err) {
-            console.log(`Error fecthing data : ${err}`);
-            return res.status(500).json(
-                {
-                    status: false,
-                    message: "Gagal mengirim data!",
-                }
-            );
-        }
-        res.status(200).json(
-            {
-                status: true,
-                data: {
-                    parameter_name: "penyiraman_air",
-                    valueData: value,
-                    start_date: new Date().toLocaleDateString(), 
-                    end_date: new Date().toLocaleDateString(),
-                },
-                message: "Data berhasil dikirim!",
-              }
-        );
-    });
-};
+//     const query = `INSERT INTO plant_values(parameter_name, value) VALUES ('penyiraman_air', ?)`;
+//     con.query(query, [value] ,(err, result) => {
+//         if (err) {
+//             console.log(`Error fecthing data : ${err}`);
+//             return res.status(500).json(
+//                 {
+//                     status: false,
+//                     message: "Gagal mengirim data!",
+//                 }
+//             );
+//         }
+//         res.status(200).json(
+//             {
+//                 status: true,
+//                 data: {
+//                     parameter_name: "penyiraman_air",
+//                     valueData: value,
+//                     start_date: new Date().toLocaleDateString(), 
+//                     end_date: new Date().toLocaleDateString(),
+//                 },
+//                 message: "Data berhasil dikirim!",
+//               }
+//         );
+//     });
+// };
